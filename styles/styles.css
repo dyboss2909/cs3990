@@ -1,0 +1,181 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #121212; /* Default background */
+    color: #fff;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Styling for Page 3 */
+body.page-3 {
+    background: url('/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header Styling */
+header {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #42a5f5;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+.main-header p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #9e9e9e;
+}
+
+/* Navigation Styling */
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 15px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 8px 15px;
+    background-color: #2d3e50;
+    border-radius: 5px;
+}
+
+.main-nav a:hover {
+    background-color: #ad9913;
+}
+
+/* Section Styling */
+.section {
+    margin: 20px 0;
+    padding: 15px;
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Section Headings */
+.section h2 {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #42a5f5;
+    border-bottom: 2px solid #42a5f5;
+    padding-bottom: 5px;
+}
+
+.section h3 {
+    background: #78d866;
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: normal;
+    color: #e0e0e0;
+}
+
+/* Profile Photo Styling */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #42a5f5;
+    float: left;
+    margin-right: 15px;
+}
+
+/* Image Styling */
+img {
+    border: 3px solid #42a5f5;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+img.photo-computers {
+    border: 3px solid #82ad66;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    width: 200px;
+    height: auto;
+}
+
+img.photo-skills {
+    border: 3px solid #ff5722;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    width: 200px;
+    height: auto;
+}
+
+.photo-nwp {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+    border: 3px solid #ffffff;
+    border-radius: 4px;
+    display: block;
+}
+
+/* Contact Icon Styling */
+.icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Footer Styling */
+footer {
+    background: #1e1e1e;
+    color: #9e9e9e;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #9e9e9e;
+}
+
+/* Lists */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #e0e0e0;
+}
+
+p {
+    line-height: 1.8;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    color: #e0e0e0;
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+}
+
+ol li {
+    margin-bottom: 10px;
+}
