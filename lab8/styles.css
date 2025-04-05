@@ -1,0 +1,179 @@
+/* Task 4 Styles */
+
+/* These styles should be added to styles.css if they're not already there */
+
+h2 {
+  background-color: #b01818;
+  color: rgb(227, 222, 222);
+  padding: 10px;
+  margin-top: 0;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+/* Make sure task1 specific styles are prominent */
+#numberGeneratorContainer {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.number-control-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.less-btn, .greater-btn {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 2px 10px;
+  cursor: pointer;
+}
+
+.number-display {
+  background-color: #d13636;
+  color: white;
+  padding: 5px 20px;
+  margin: 0 5px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 20px;
+}
+
+.make-number-text {
+  margin-top: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#newsContainer {
+  margin-top: 20px;
+}
+
+.news-item {
+  background-color: #f9b4b4;
+  margin-bottom: 5px;
+  padding: 10px;
+  position: relative;
+}
+
+.news-item:nth-child(odd) {
+  background-color: #f7dfdf;
+}
+
+.news-title {
+  font-weight: bold;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.news-content {
+  margin-top: 5px;
+  border-top: 1px solid black;
+  padding-top: 5px;
+  color: black;
+}
+
+.remove-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+#colors {
+  margin-bottom: 20px;
+}
+
+#colors h2 {
+  background-color: transparent;
+  color: black;
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+.color-btn {
+  padding: 5px 15px;
+  border: 1px solid #000;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#fruits ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.fruit-item {
+  padding: 8px 15px;
+  margin-bottom: 5px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fruit-item.highlighted {
+  box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.5);
+}
+
+.star-rating {
+  display: inline-block;
+}
+
+.star {
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.star.active {
+  color: orange;
+}
+
+.star-rating {
+  display: inline-block;
+}
+
+.star {
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.star.active {
+  color: orange;
+}
+
+/* Navigation Styles */
+.navigation {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  gap: 15px;
+}
+
+.navigation a {
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.navigation a:hover {
+  background-color: #ddd;
+}

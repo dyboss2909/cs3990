@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3 - Interactive Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styling for centered menu */
+        #task3 {
+            text-align: center;
+        }
+        
+        .menu {
+            width: 200px;
+            border: 1px solid #ddd;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .menu-title {
+            background-color: #b22222;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .menu-items {
+            display: none;
+        }
+        
+        .menu-item {
+            padding: 8px 15px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        
+        #imageContainer {
+            margin: 20px auto;
+            text-align: center;
+        }
+        
+        #imageContainer img {
+            max-width: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            background-color: #b22222;
+            color: white;
+            padding: 10px;
+            margin-top: 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>Document Object Model. Event Handling: A3(8)</h2>
+    
+    <!-- Task 3 -->
+    <section id="task3">
+        <h3>Task 3</h3>
+        <div id="menuContainer"></div>
+        <div id="imageContainer"></div>
+    </section>
+    
+    <div class="navigation">
+        <a href="task2.html">Previous Task</a>
+        <a href="index.html">Back to Index</a>
+        <a href="task4.html">Next Task</a>
+    </div>
+    
+    <script>
+        // Ensure the page is fully loaded before running the scripts
+        document.addEventListener('DOMContentLoaded', function() {
+            /**
+             * InteractiveMenu class
+             * Creates a menu that can be opened/closed and displays an image when an item is selected
+             */
+            class InteractiveMenu {
+                constructor(containerId, imageContainerId) {
+                    this.container = document.getElementById(containerId);
+                    this.imageContainer = document.getElementById(imageContainerId);
+                    this.isOpen = false;
+                    this.selectedItem = null;
+                    this.menuItems = [
+                        {name: 'Cake', image: 'cake.jpg'},
+                        {name: 'Donut', image: 'donut.jpg'},
+                        {name: 'Honey', image: 'honey.jpg'},
+                        {name: 'Ice Cream', image: 'ice-cream.jpg'}
+                    ];
+                    this.render();
+                    this.setupEventListeners();
+                }
+                
+                /**
+                 * Renders the menu
+                 */
+                render() {
+                    const menuElement = document.createElement('div');
+                    menuElement.className = 'menu';
+                    
+                    // Create menu title
+                    const titleElement = document.createElement('div');
+                    titleElement.className = 'menu-title';
+                    titleElement.textContent = 'Sweeties (click me)!';
+                    
+                    // Create menu items container
+                    const itemsContainer = document.createElement('div');
+                    itemsContainer.className = 'menu-items';
+                    
+                    // Create menu items
+                    this.menuItems.forEach(item => {
+                        const itemElement = document.createElement('div');
+                        itemElement.className = 'menu-item';
+                        itemElement.textContent = item.name;
+                        itemElement.dataset.image = item.image;
+                        
+                        itemsContainer.appendChild(itemElement);
+                    });
+                    
+                    menuElement.appendChild(titleElement);
+                    menuElement.appendChild(itemsContainer);
+                    
+                    this.container.appendChild(menuElement);
+                    
+                    // Store references to elements
+                    this.menuElement = menuElement;
+                    this.titleElement = titleElement;
+                    this.itemsContainer = itemsContainer;
+                }
+                
+                /**
+                 * Sets up event listeners
+                 */
+                setupEventListeners() {
+                    // Toggle menu on title click
+                    this.titleElement.addEventListener('click', () => {
+                        this.toggleMenu();
+                    });
+                    
+                    // Handle menu item selection
+                    this.itemsContainer.addEventListener('click', (e) => {
+                        if (e.target.classList.contains('menu-item')) {
+                            this.selectItem(e.target);
+                        }
+                    });
+                }
+                
+                /**
+                 * Toggles the menu open/closed
+                 */
+                toggleMenu() {
+                    this.isOpen = !this.isOpen;
+                    
+                    if (this.isOpen) {
+                        this.itemsContainer.style.display = 'block';
+                    } else {
+                        this.itemsContainer.style.display = 'none';
+                        this.clearSelection();
+                    }
+                }
+                
+                /**
+                 * Selects a menu item
+                 * @param {HTMLElement} item - The selected item element
+                 */
+                selectItem(item) {
+                    // Clear previous selection
+                    if (this.selectedItem) {
+                        this.selectedItem.style.color = '';
+                    }
+                    
+                    // Set new selection
+                    this.selectedItem = item;
+                    this.selectedItem.style.color = 'red';
+                    
+                    // Display the image
+                    this.displayImage(item.dataset.image);
+                }
+                
+                /**
+                 * Displays an image
+                 * @param {string} imageName - The name of the image to display
+                 */
+                displayImage(imageName) {
+                    this.imageContainer.innerHTML = `<img src="images/${imageName}" alt="Selected item">`;
+                }
+                
+                /**
+                 * Clears the current selection
+                 */
+                clearSelection() {
+                    if (this.selectedItem) {
+                        this.selectedItem.style.color = '';
+                        this.selectedItem = null;
+                    }
+                    
+                    // Clear the image
+                    this.imageContainer.innerHTML = '';
+                }
+            }
+
+            // Initialize the InteractiveMenu
+            const interactiveMenu = new InteractiveMenu('menuContainer', 'imageContainer');
+        });
+    </script>
+</body>
+</html>
